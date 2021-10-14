@@ -17,7 +17,16 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-transformer-sqip`,
     `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          // We disable placeholders by default to simplify tests
+          // and ensure that we respect these defaults
+          placeholder: `none`,
+        },
+      },
+    },
     // Enable to update schema.sql
     // {
     //   resolve: `gatsby-plugin-schema-snapshot`,

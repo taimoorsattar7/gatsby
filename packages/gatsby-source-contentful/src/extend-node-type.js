@@ -49,7 +49,6 @@ export async function setFieldsOnGraphQLNodeType({ type, cache }) {
         },
         quality: {
           type: GraphQLInt,
-          defaultValue: 50,
         },
         layout: {
           type: ImageLayoutType,
@@ -60,7 +59,6 @@ export async function setFieldsOnGraphQLNodeType({ type, cache }) {
             FULL_WIDTH: The image resizes to fit its container, even if that is larger than the source image.
             Pass a value to "sizes" if the container is not the full width of the screen.
         `,
-          defaultValue: `constrained`,
         },
         placeholder: {
           type: ImagePlaceholderType,
@@ -70,7 +68,6 @@ export async function setFieldsOnGraphQLNodeType({ type, cache }) {
             DOMINANT_COLOR: a solid color, calculated from the dominant color of the image.
             TRACED_SVG: a low-resolution traced SVG of the image.
             NONE: no placeholder. Set the argument "backgroundColor" to use a fixed background color.`,
-          defaultValue: `dominantColor`,
         },
         formats: {
           type: GraphQLList(ImageFormatType),
@@ -80,7 +77,6 @@ export async function setFieldsOnGraphQLNodeType({ type, cache }) {
             not know the formats of the source images, as this could lead to unwanted results such as converting JPEGs to PNGs. Specifying
             both PNG and JPG is not supported and will be ignored.
         `,
-          defaultValue: [``, `webp`],
         },
       }
     )
